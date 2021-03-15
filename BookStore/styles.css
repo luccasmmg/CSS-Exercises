@@ -1,0 +1,109 @@
+:root {
+  --gutter: 20px;
+}
+
+body {
+  display: grid;
+  height: 100vh;
+  grid-template-rows: auto 1fr auto;
+  margin:0;
+  font-family: system-ui, sans-serif;
+}
+
+* {
+  scrollbar-width: none;  /* Firefox */
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  padding: 4rem 1.5rem 2rem;
+  position: sticky;
+  top: 0;
+  background: #fff;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 20px 1fr;
+  align-content: start;
+}
+
+footer {
+  padding: 1.5rem 1.5rem 3rem;
+  text-align: center;
+  display: flex;
+  justify-content: space-around;
+  position: sticky;
+  bottom: 0;
+  background: #fff;
+}
+
+main > * {
+    grid-column: 2 / -2;
+}
+
+main .full {
+    grid-column: 1 / -1;
+}
+
+.hs {
+    display: grid;
+    grid-gap: 1.5rem;
+    grid-auto-flow: column;
+    grid-auto-columns: calc(50% - var(--gutter) * 2);
+    grid-template-rows: minmax(150px, 1fr);
+    overflow-x: scroll;
+    scrollbar-width: none;
+    margin-bottom: 0;
+    padding-bottom: 0.5rem;
+}
+
+.hs::after {
+  content: '';
+  width: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+.hs > li,
+.item {
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+}
+.item > h5,
+.item > h4 {
+  margin: 2%;
+}
+.item > img {
+  border-radius: 8px;
+}
+
+h1,
+h2 {
+  margin-bottom: 0;
+}
+
+a {
+  font-size: 1.5rem;
+}
+
+footer a {
+  color: #CDCDCD;
+  text-decoration: none;
+}
+
+header a {
+  color: black;
+  text-decoration: none;
+}
+
+a:visited {
+  color: #413B89;
+}
